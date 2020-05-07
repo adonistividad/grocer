@@ -1,0 +1,42 @@
+mkvirtualenv --python=/usr/bin/python3.5 myenv
+
+-------------------------------------
+python -m venv venv_api
+venv_api\scripts\activate
+pip install djangorestframework
+django-admin startproject api_example
+cd api_example
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py startapp languages
+
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py runserver 8001
+
+--------------------------
+echo "# django_api" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/avtividad/django_api.git
+git push -u origin master
+
+
+----------------- delete folder
+The steps for doing this are:
+
+
+In the command-line, navigate to your local repository. Ensure you are in the default branch:
+git checkout master
+
+The rm -r command will recursively remove your folder:
+git rm -r folder-name
+
+Commit the change:
+git commit -m "Remove duplicated directory"
+
+Push the change to your remote repository:
+git push origin master
